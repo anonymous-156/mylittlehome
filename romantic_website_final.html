@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Little homeee🫂💗🧿 ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --pink: #ff6f9f;
+  --deep: #b82d65;
+  --cream: #fff4f7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+  background: #170b19;
+  color: white;
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 28px 22px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.04);
+  transition: opacity .8s ease, transform .9s ease,
+              visibility .8s;
+  isolation: isolate;
+}
+
+.screen.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.screen::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at top, #77304f, transparent 65%),
+    linear-gradient(145deg, #180c20, #41152d 55%, #170b19);
+  transition: filter .5s;
+}
+
+.screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(22, 5, 20, .25),
+    rgba(22, 5, 20, .48)
+  );
+}
+
+/* Screen 1 */
+#screen1 {
+  background: #24101f;
+}
+
+#screen1::before {
+  background:
+    radial-gradient(circle at 20% 20%, #8d345b 0, transparent 40%),
+    radial-gradient(circle at 80% 80%, #65254f 0, transparent 45%),
+    linear-gradient(135deg, #1a0b20, #481a38);
+}
+
+.eyebrow {
+  font-size: .8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffc0d5;
+  margin-bottom: 12px;
+  animation: fadeUp 1s both;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(3.5rem, 12vw, 6.5rem);
+  line-height: 1.15;
+  color: #fff2f7;
+  text-shadow: 0 0 25px #ff6f9f77, 0 0 60px #ff6f9f33;
+}
+
+.glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.photo-frame {
+  width: min(70vw, 285px);
+  height: min(42vh, 300px);
+  min-height: 180px;
+  margin: 24px 0 22px;
+  padding: 7px;
+  border: 1px solid #ffc2d788;
+  border-radius: 24px;
+  background: #ffffff12;
+  box-shadow: 0 0 35px #ff70a333, 0 15px 45px #0005;
+  transform: rotate(-2deg);
+  animation: photoEnter 1.2s .25s both;
+  transition: transform .4s;
+}
+
+.photo-frame:hover {
+  transform: rotate(0deg) scale(1.035);
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* Buttons */
+.love-btn {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ffffff55;
+  border-radius: 50px;
+  padding: 15px 35px;
+  margin-top: 12px;
+  color: white;
+  background: linear-gradient(120deg, #ff5f96, #d94c91, #ad4ee0);
+  background-size: 200% 200%;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: .7px;
+  cursor: pointer;
+  box-shadow: 0 8px 30px #ff579655;
+  transition: transform .25s, box-shadow .25s;
+  animation: buttonGlow 4s ease infinite;
+}
+
+.love-btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 38px #ff579988;
+}
+
+.love-btn:active {
+  transform: scale(.95);
+}
+
+.love-btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -80%;
+  width: 45%;
+  height: 200%;
+  background: #ffffff55;
+  transform: rotate(25deg);
+  transition: left .6s;
+}
+
+.love-btn:hover::after {
+  left: 140%;
+}
+
+/* Screen 2: replace background image below */
+#screen2::before {
+  background-image:
+    linear-gradient(#200a1bb3, #200a1bd9),
+    url("your-image-2.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(7px);
+  transform: scale(1.06);
+}
+
+#screen2::after {
+  background: radial-gradient(ellipse, #50152d33, #16071388);
+}
+
+.love-message {
+  max-width: 850px;
+  font-size: clamp(2.7rem, 9vw, 5.4rem);
+  margin-bottom: 22px;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 3.8vw, 1.3rem);
+  color: #ffe0eb;
+  line-height: 1.8;
+  margin: 5px 0 18px;
+}
+
+/* Screen 3: the note */
+#screen3::before {
+  background:
+    radial-gradient(circle at 10% 10%, #8b325c66, transparent 50%),
+    linear-gradient(145deg, #1c0b20, #482039, #26102c);
+}
+
+.note-card {
+  width: min(100%, 600px);
+  padding: clamp(25px, 6vw, 42px);
+  border: 1px solid #ffc2d744;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #ffffff12, #ffffff08);
+  box-shadow: 0 20px 65px #0004, inset 0 0 35px #ff9dc00a;
+  backdrop-filter: blur(12px);
+  animation: noteEnter 1s both;
+}
+
+.note-card h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2.3rem, 7vw, 3.5rem);
+  color: #ffbdd4;
+  margin-bottom: 20px;
+}
+
+.note-text {
+  font-size: clamp(.96rem, 3.3vw, 1.12rem);
+  line-height: 2;
+  color: #fff0f5;
+  white-space: pre-line;
+}
+
+.tiny-heart {
+  display: inline-block;
+  color: #ff8db5;
+  font-size: 1.35rem;
+  margin: 15px 0 5px;
+  animation: heartbeat 1.3s infinite;
+}
+
+/* Screen 4 */
+#screen4::before {
+  background:
+    radial-gradient(circle at 50% 35%, #92335c, transparent 45%),
+    linear-gradient(135deg, #1c0b20, #40162f, #170b19);
+}
+
+.final-title {
+  font-size: clamp(3.4rem, 12vw, 6.5rem);
+  margin-bottom: 8px;
+}
+
+.final-caption {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  color: #ffc2d7;
+  margin-top: 4px;
+}
+
+/* Screen 5: final message — layout-only fix */
+#screen5 {
+  justify-content: flex-start;
+  padding: max(18px, 3.5vh) 22px;
+}
+
+#screen5 .screen-content {
+  margin: auto 0;
+  gap: 10px;
+}
+
+#screen5 .final-title {
+  width: 100%;
+  max-width: 850px;
+  font-size: clamp(2.7rem, 9vw, 5.4rem);
+  line-height: 1.12;
+  margin-bottom: 0;
+}
+
+#screen5 .final-message {
+  width: 100%;
+  max-width: 650px;
+  font-size: clamp(.98rem, 3.5vw, 1.2rem);
+  color: #ffe0eb;
+  line-height: 1.7;
+  margin: 0;
+}
+
+#screen5 .photo-frame {
+  width: min(62vw, 245px);
+  height: min(27dvh, 220px);
+  min-height: 110px;
+  margin: 6px 0;
+  flex-shrink: 0;
+}
+
+#screen5 .love-btn {
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  #screen5 {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  #screen5 .screen-content {
+    gap: 9px;
+  }
+
+  #screen5 .final-title {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+  }
+
+  #screen5 .photo-frame {
+    width: min(62vw, 225px);
+    height: min(25dvh, 185px);
+    min-height: 100px;
+  }
+}
+
+@media (max-height: 650px) {
+  #screen5 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  #screen5 .screen-content {
+    gap: 7px;
+  }
+
+  #screen5 .final-title {
+    font-size: clamp(2.2rem, 7vh, 3.6rem);
+  }
+
+  #screen5 .photo-frame {
+    height: min(23dvh, 150px);
+    min-height: 85px;
+    margin: 3px 0;
+  }
+
+  #screen5 .love-btn {
+    padding: 12px 28px;
+    margin-top: 2px;
+  }
+}
+
+/* Floating decorations */
+#hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.float-heart {
+  position: absolute;
+  bottom: -60px;
+  color: #ff8ab3;
+  opacity: 0;
+  filter: drop-shadow(0 0 8px #ff80ae55);
+  animation: floatUp linear forwards;
+}
+
+.twinkle {
+  position: absolute;
+  color: #fff0bd;
+  font-size: 12px;
+  animation: twinkle 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.screen-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp .9s both;
+}
+
+.bottom-hint {
+  color: #ffd4e2;
+  font-size: .8rem;
+  margin-top: 20px;
+  opacity: .8;
+  letter-spacing: 1px;
+}
+
+#screen3 {
+  justify-content: flex-start;
+  padding-top: max(30px, 5vh);
+  padding-bottom: 30px;
+}
+
+#screen3 .screen-content {
+  margin: auto 0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes photoEnter {
+  from { opacity: 0; transform: translateY(25px) rotate(-7deg); }
+  to { opacity: 1; transform: translateY(0) rotate(-2deg); }
+}
+
+@keyframes noteEnter {
+  from { opacity: 0; transform: translateY(25px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 20px #ff6f9f44; }
+  50% { text-shadow: 0 0 38px #ff6f9f99, 0 0 75px #ff6f9f44; }
+}
+
+@keyframes buttonGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.2); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.15); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: .8; }
+  90% { opacity: .65; }
+  100% { transform: translateY(-115vh) rotate(35deg); opacity: 0; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: .15; transform: scale(.8); }
+  50% { opacity: .9; transform: scale(1.3); }
+}
+
+@media (max-height: 650px) {
+  .screen { padding-top: 18px; padding-bottom: 18px; }
+  .photo-frame { height: 190px; min-height: 140px; margin: 14px 0; }
+  h1 { font-size: clamp(3rem, 9vh, 5rem); }
+  #screen3 { padding-top: 18px; }
+  .note-card { padding: 22px; }
+  .note-text { line-height: 1.75; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<!-- SCREEN 1 -->
+<section class="screen active" id="screen1">
+  <div class="screen-content">
+    <p class="eyebrow">♡ a little something for my little home😚 ♡</p>
+    <h1 class="glow">HELLO MERA BACHA🥹</h1>
+
+    <div class="photo-frame">
+      <img src="your-image-1.jpg"
+           alt="A special picture for my baby">
+    </div>
+
+    <p class="subtitle">Mere pas apke liye kuch hai, mera bacha ♡</p>
+
+    <button class="love-btn" onclick="goTo(2)">
+      Proceed ♡
+    </button>
+
+    <p class="bottom-hint">made with love, just for my little home</p>
+  </div>
+</section>
+
+<!-- SCREEN 2 -->
+<section class="screen" id="screen2">
+  <div class="screen-content">
+    <p class="eyebrow">♡ from my heart to yours ♡</p>
+
+    <h1 class="love-message glow">
+      I LOVEE YOUU SOO MUCHH MY BABYYYY
+    </h1>
+
+    <p class="subtitle">
+      i made this website to give you a message ♡
+    </p>
+
+    <button class="love-btn" onclick="goTo(3)">
+      read the note 💌
+    </button>
+
+    <p class="bottom-hint">🫂🫂🫂💗💗💗</p>
+  </div>
+</section>
+
+<!-- SCREEN 3 -->
+<section class="screen" id="screen3">
+  <div class="screen-content">
+    <div class="note-card">
+      <h2>For my babyyy ♡</h2>
+
+      <p class="note-text">i know baby that you are upset..chahe kisi pi baat pe ho And im really sorry for that. I just wanna say that jab bhi apko hurt hota ya bura feel hota..you can talk to me..issliye toh hu me apke sath..ki apko kuch bhi akela na face krna pde. Apka mood sahi nhi hota..kiya kro baat..nikal do gussa bhi hai toh..but meko dur mt kro apne se.meko kuch bhi btane se hesitate mt kiya kro, okay? Apka hi toh baby hu mai, apki hi toh sununga naa mera bacha🥹. I'm always here to listen to you..to be there for you bubu🫂</p>
+
+      <div class="tiny-heart">♥</div>
+
+      <p class="subtitle">
+        you don't have to pretend to be okay with me, baby.
+        ♡
+      </p>
+    </div>
+
+    <button class="love-btn" onclick="goTo(4)">
+      proceed, my love ♡
+    </button>
+
+    <p class="bottom-hint">sending you the biggest hug ever</p>
+  </div>
+</section>
+
+<!-- SCREEN 4 -->
+<section class="screen" id="screen4">
+  <div class="screen-content">
+    <p class="eyebrow">and one last thing...</p>
+
+    <h1 class="final-title glow">Ioveee youu<br>babyyyy ♡</h1>
+
+    <div class="photo-frame">
+      <img src="your-image-4.jpg"
+           alt="A final picture for my baby">
+    </div>
+
+    <p class="final-caption">I'm all yours, okay? ♡</p>
+
+    <button class="love-btn" onclick="goTo(5)">
+      one last thing, my love ♡
+    </button>
+
+    <p class="bottom-hint">♡ you are so, so loved ♡</p>
+  </div>
+</section>
+
+<!-- SCREEN 5 -->
+<section class="screen" id="screen5">
+  <div class="screen-content">
+    <p class="eyebrow">♡ just for you, my little home ♡</p>
+
+    <h1 class="final-title glow">I LOVEEE YOUUU BABYYYY ♡</h1>
+
+    <p class="final-message">
+      i really hope apko ye psnd ayaaa, apka mood sahi krne ke liye
+      bnaya thaa, heheeeee. loveee youu soo muchhhhhhh 🥹💗
+    </p>
+
+    <div class="photo-frame">
+      <img src="your-image-5.jpg"
+           alt="A special picture for my baby">
+    </div>
+
+    <button class="love-btn" onclick="celebrate()">
+      THE END ♡
+    </button>
+
+    <p class="bottom-hint">♡ forever your little home ♡</p>
+  </div>
+</section>
+
+<script>
+const screens = document.querySelectorAll('.screen');
+const heartLayer = document.getElementById('hearts');
+let currentScreen = 1;
+
+function goTo(number) {
+  if (number < 1 || number > 5) return;
+
+  screens.forEach(screen => screen.classList.remove('active'));
+  currentScreen = number;
+
+  const next = document.getElementById('screen' + number);
+  next.classList.add('active');
+
+  // Restart the screen's entrance animations.
+  const content = next.querySelector('.screen-content');
+  content.style.animation = 'none';
+  void content.offsetWidth;
+  content.style.animation = '';
+
+  burstHearts(number === 4 || number === 5 ? 24 : 10);
+}
+
+function createHeart(big = false) {
+  const heart = document.createElement('span');
+  heart.className = 'float-heart';
+  heart.textContent = ['♡', '♥', '❤', '୨୧'][Math.floor(Math.random() * 4)];
+
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (big ? 22 + Math.random() * 26 : 14 + Math.random() * 23) + 'px';
+  heart.style.animationDuration = (5 + Math.random() * 6) + 's';
+
+  heartLayer.appendChild(heart);
+  heart.addEventListener('animationend', () => heart.remove());
+}
+
+function burstHearts(amount = 12) {
+  for (let i = 0; i < amount; i++) {
+    setTimeout(() => createHeart(true), i * 65);
+  }
+}
+
+// A gentle stream of floating hearts throughout the experience.
+setInterval(() => createHeart(), 850);
+
+// Little twinkling stars.
+for (let i = 0; i < 24; i++) {
+  const star = document.createElement('span');
+  star.className = 'twinkle';
+  star.textContent = '✦';
+  star.style.left = Math.random() * 100 + 'vw';
+  star.style.top = Math.random() * 100 + 'vh';
+  star.style.animationDelay = Math.random() * 3 + 's';
+  star.style.fontSize = (7 + Math.random() * 10) + 'px';
+  document.body.appendChild(star);
+}
+
+function celebrate() {
+  burstHearts(45);
+}
+</script>
+
+</body>
+</html>
